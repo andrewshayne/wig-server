@@ -375,4 +375,4 @@ io.on("connection", (socket) => {
 
 console.log('time to listen', playerCount);
 
-http.listen(4444);
+http.listen(process.env.PORT || 5000)
