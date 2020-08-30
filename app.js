@@ -3,7 +3,7 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
 
-let discussionTime = 5; //in seconds
+let discussionTime = 300; //in seconds
 let myInterval;
 let roleActionTimer = 10; //15s for each role
 let autoIdIncrementer = 0;
