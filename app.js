@@ -3,9 +3,9 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
 
-let discussionTime = 300; //in seconds
+let discussionTime = 30; //in seconds
 let myInterval;
-let roleActionTimer = 10; //15s for each role
+let roleActionTimer = 15; //15s for each role
 let autoIdIncrementer = 0;
 let playerCount = 0;
 let playerDict = {};
@@ -228,7 +228,7 @@ function beginVote() {
 	clearInterval(myInterval);
 	updateGameStatus();
 	console.log('Vote!');
-	io.emit("startVoteTimer", {'time': 10});
+	io.emit("startVoteTimer", {'time': 15});
 	
 	setTimeout(() => {
 		console.log('GG');
@@ -249,7 +249,7 @@ function beginVote() {
 		
 		updateGameStatus();
 		io.emit("review", {'votedList': votedList, 'playerDict': playerDict});
-	}, 10000);
+	}, 15000);
 }
 
 
